@@ -1,11 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/14 18:50:27 by pshock            #+#    #+#             */
+/*   Updated: 2019/09/14 18:55:00 by pshock           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-char *strchr(const char *s, int c)
+
+char *ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
 		if (*s == c)
-			return (s);
+		{
+			return ((char*)s);
+		}
 		s++;
 	}
-	return (NULL):
+	return (NULL);
 }
