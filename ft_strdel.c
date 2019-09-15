@@ -6,15 +6,19 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 19:10:47 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/14 19:10:59 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/15 17:22:41 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void  ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
+	int i;
+
+	i = 0;
 	if (!as || !*as)
 		return ;
 	free(*as);
+	*as = NULL;
 }

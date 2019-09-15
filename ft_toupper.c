@@ -6,13 +6,13 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 19:06:00 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/14 19:06:15 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/15 15:23:07 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int		ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (c - 32);

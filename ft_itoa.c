@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 19:55:53 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/15 15:53:01 by pshock           ###   ########.fr       */
+/*   Created: 2019/09/15 14:35:29 by pshock            #+#    #+#             */
+/*   Updated: 2019/09/15 15:09:19 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_itoa(int n)
 {
-	size_t	i;
-	size_t	dstlength;
-	size_t	srclength;
+	char	*number;
 
-	i = 0;
-	dstlength = ft_strlen(dst);
-	srclength = ft_strlen(src);
-	if (size <= dstlength)
-		return (srclength + size);
-	while ((dst[i] != '\0') && i < (size - 1))
-		i++;
-	while (*src && i < (size - 1))
+	number = (char *)ft_memalloc(10);
+	if (n >= 0 && number)
 	{
-		dst[i] = *src;
-		i++;
-		src++;
+		*--number = '0' + (n % 10);
+		n /= 10;
+		while (n != 0)
+		{
+			*--number = '0' + (n % 10);
+			n /= 10;
+		}
 	}
-	dst[i] = '\0';
-	return (dstlength + srclength);
+	else if (number)
+	{
+		*--number = '0' - (n % 10);
+		n /= 10;
+		while (n != 0)
+		{
+			*--number = '0' - (n % 10);
+			n /= 10;
+		}
+		*--number = '-';
+	}
+	return (number);
 }

@@ -6,40 +6,35 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 19:15:11 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/14 19:15:23 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/15 17:12:04 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen_nows(const char *s)
-{
-	int i;
-
-	i = 0;
-	while (*s)
-	{
-		if (*s == ' ' || *s == '\n' || *s == '\t')
-			i++;
-		s++;
-	}
-	return (i);
-}
-
-
 char	*ft_strtrim(char const *s)
 {
-	char *res;
-	int i;
-	int len;
+	int		i;
+	int		len;
+	char	*str;
 
-	i = 0;
-	len = ft_strlen_nows(s);
-	if (!(res = (char*)malloc(len + 1)))
+	if (s == NULL)
 		return (NULL);
-	while (*s == ' ' || *s == '\n' || *s == '\t')
-	{
-		s++;
-	}
-	return (NULL);
+	len = ft_strlen(s);
+	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+		len--;
+	i = -1;
+	while (s[++i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		len--;
+	if (len <= 0)
+		len = 0;
+	str = (char*)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	s += i;
+	i = -1;
+	while (++i < len)
+		str[i] = *s++;
+	str[i] = '\0';
+	return (str);
 }

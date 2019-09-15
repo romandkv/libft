@@ -6,7 +6,7 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 18:45:04 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/14 20:46:34 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/15 14:49:18 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
-
+void	ft_putnbr(int n);
+int		ft_strequ(char const *s1, char const *s2);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(const char *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+char	*ft_itoa(int n);
+char	**ft_strsplit(const char *str, char c);
 #endif

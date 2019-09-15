@@ -6,7 +6,7 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 19:12:56 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/14 19:13:08 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/15 15:22:50 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int i;
-	int len;
-	char *res;
+	int		i;
+	int		len;
+	char	*res;
 
 	i = 0;
 	len = ft_strlen(s);
@@ -28,5 +28,5 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		i++;
 	}
 	res[i] = '\0';
-	return (res);	
+	return (res);
 }

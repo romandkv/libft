@@ -6,13 +6,13 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 19:09:56 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/14 19:10:14 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/15 15:08:19 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void  ft_memdel(void **ap)
+void	ft_memdel(void **ap)
 {
 	if (!ap || !*ap)
 		return ;

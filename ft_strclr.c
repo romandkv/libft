@@ -6,13 +6,13 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 19:11:28 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/14 19:11:40 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/15 15:14:43 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void  ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
 	int i;
 
