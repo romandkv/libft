@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 19:11:54 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/16 15:43:37 by pshock           ###   ########.fr       */
+/*   Created: 2019/09/16 17:30:26 by pshock            #+#    #+#             */
+/*   Updated: 2019/09/16 17:41:36 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+int		ft_isspace(char nptr)
 {
-	int i;
-
-	if (!s || !f)
-		return ;
-	i = 0;
-	while (s[i])
-	{
-		(*f)(s + i);
-		i++;
-	}
+	if (nptr == ' ' || nptr == '\t' || nptr == '\r' ||
+			nptr == '\f' || nptr == '\v' || nptr == '\n')
+		return (1);
+	return (0);
 }

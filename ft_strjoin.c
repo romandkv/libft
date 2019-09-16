@@ -6,7 +6,7 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 19:14:41 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/15 15:22:25 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/16 15:48:01 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	i = 0;
 	j = 0;
 	if (!(res = (char*)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))

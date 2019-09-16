@@ -6,7 +6,7 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 19:12:56 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/15 15:22:50 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/16 15:45:04 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		len;
 	char	*res;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
 	if (!(res = (char *)malloc(len + 1)))

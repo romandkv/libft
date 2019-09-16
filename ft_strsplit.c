@@ -6,7 +6,7 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 14:49:39 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/15 17:56:00 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/16 17:24:40 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ char		**ft_strsplit(const char *str, char c)
 	int		wrd;
 	char	**s;
 
+	if (!str)
+		return (NULL);
 	i = 0;
 	j = 0;
 	wrd = ft_count_words(str, c);

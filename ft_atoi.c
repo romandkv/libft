@@ -6,34 +6,37 @@
 /*   By: pshock <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 14:54:56 by pshock            #+#    #+#             */
-/*   Updated: 2019/09/15 15:04:45 by pshock           ###   ########.fr       */
+/*   Updated: 2019/09/16 18:00:43 by pshock           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+int				ft_atoi(const char *str)
 {
-	int i;
-	int res;
-	int op;
+	int			negative;
+	long long	result;
+	long long	temp;
 
-	i = 0;
-	op = 1;
-	while (nptr[i] == '\n' || nptr[i] == '\t' || nptr[i] == '\r' ||
-			nptr[i] == '\f' || nptr[i] == '\n' || nptr[i] == '\n')
-		i++;
-	if (nptr[i] == '+')
-		i++;
-	else if (nptr[i] == '-')
+	negative = 1;
+	result = 0;
+	while (*str != '\0' && (*str == ' ' || *str == '\t' ||
+				*str == '\r' || *str == '\n' || *str == '\f' || *str == '\v'))
+		str++;
+	if (*str == '-')
+		negative = -1;
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str != '\0' && (*str >= '0' && *str <= '9'))
 	{
-		op = -1;
-		i++;
+		temp = (result * 10) + (*str++ - '0');
+		if (result > temp)
+		{
+			if (negative == 1)
+				return (-1);
+			return (0);
+		}
+		result = temp;
 	}
-	res = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		res = res * 10 + nptr[i];
-	}
-	return (res * op);
+	return ((int)(result * negative));
 }
